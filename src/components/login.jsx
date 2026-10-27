@@ -9,22 +9,21 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+    e.preventDefault();
 
-        axios.post("https://movie-garage.onrender.com/login", {
-            username,
-            password
-        })
-        .then((response) => {
-            if (response.data === "Login successful") {
-                navigate("/home");
-            }
-        })
-        .catch((error) => {
-            alert(error.response?.data || "Login failed");
-        });
-    };
-
+    axios.post("https://movie-garage.onrender.com/login", {
+        username,
+        password
+    })
+    .then((response) => {
+        if (response.data === "Login successful") {
+            navigate("/home");
+        }
+    })
+    .catch((error) => {
+        alert(error.response?.data || "Login failed");
+    });
+};
     return (
         <div className="min-h-screen flex items-center justify-center bg-black px-4">
             <div className="w-full max-w-md rounded-lg bg-zinc-900 p-8 shadow-2xl">
@@ -33,7 +32,7 @@ const Login = () => {
                 </h1>
 
                 <h2 className="mb-6 text-3xl font-bold text-white">
-                    Sign In
+                    login In
                 </h2>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -59,7 +58,7 @@ const Login = () => {
                         type="submit"
                         className="w-full rounded-md bg-red-600 py-3 font-bold text-white transition hover:bg-red-700 active:scale-95"
                     >
-                        Sign In
+                        login In
                     </button>
                 </form>
 

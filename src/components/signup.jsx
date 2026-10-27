@@ -8,24 +8,29 @@ const Signup = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {                                                                                                                             
-        e.preventDefault();
+    const handleSubmit = (e) => {
+    e.preventDefault();
 
-        axios.post("https://movie-garage.onrender.com/signup", {
-            username,
-            password
-        })
-        .then((response) => {
-            alert(response.data);
-            navigate("/login");
-        })
-        .catch(() => {
-            alert("Signup failed");
-        });
-    };
+    console.log("Signup button clicked");
+    console.log("Username:", username);
+
+    axios.post("https://movie-garage.onrender.com/signup", {
+    username,
+    password
+})
+.then((response) => {
+    alert(response.data);
+    navigate("/login");
+})
+.catch((error) => {
+    console.error("Signup error:", error);
+    alert(error.response?.data || "Signup failed");
+});
+};
+    
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-black px-4 bg-zinc-900">
+        <div className="min-h-screen flex items-center justify-center bg-black px-4">
             <div className="w-full max-w-md rounded-lg bg-zinc-900 p-8 shadow-2xl">
                 <h1 className="mb-8 text-4xl font-extrabold text-red-600">
                    The Movie Garage
