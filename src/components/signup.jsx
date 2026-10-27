@@ -14,7 +14,7 @@ const Signup = () => {
     console.log("Signup button clicked");
     console.log("Username:", username);
 
-    axios.post("https://movie-garage.onrender.com/signup", {
+    axios.post("https://movie-garage-1.onrender.com/signup", {
     username,
     password
 })

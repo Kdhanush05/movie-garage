@@ -11,7 +11,7 @@ const Login = () => {
     const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("https://movie-garage.onrender.com/login", {
+    axios.post("https://movie-garage-1.onrender.com/login", {
         username,
         password
     })
